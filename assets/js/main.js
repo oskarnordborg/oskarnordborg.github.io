@@ -9,14 +9,14 @@ class ViewModel {
 var vm = new ViewModel()
 ko.applyBindings(vm);
 
-const login = async function(password) {
+const login = function(password) {
 
     return (password === "magisk")
 };
 
-const checkphrase = async function(phrase) {
+const checkphrase = function(phrase) {
 
-    return (password === "iskub")
+    return (phrase === "iskub")
 };
 
 function setCookie(cname, cvalue, exdays) {
