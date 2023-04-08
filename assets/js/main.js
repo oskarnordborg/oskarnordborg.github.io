@@ -153,6 +153,18 @@ jQuery(document).ready(function ($) {
     });
 });
 
+const hideMobileKeyboardOnReturn = (keyboardEvent) => {
+    element.addEventListener('keyup', (keyboardEvent) => {
+        if (keyboardEvent.code === 'Enter') {
+            element.blur();
+        }
+    });
+};
+
+document.querySelementectorAll('[type=search]').forEach((element) => {
+    hideMobileKeyboardOnReturn(element);
+});
+
 function showMessage(msg, color, time) {
     var x = document.getElementById('snackbar');
 
