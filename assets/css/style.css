@@ -65,7 +65,7 @@ Author URI: http://bootstrapthemes.co
   /*-------------- saerch section -----------*/
   .unlock {
     position: fixed;
-    top: 50%;
+    top: 45%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
@@ -78,7 +78,7 @@ Author URI: http://bootstrapthemes.co
   }
   .question {
     position: fixed;
-    top: 50%;
+    top: 44%;
     left: 25%;
     width: 50%;
     text-align: center;
@@ -92,7 +92,7 @@ Author URI: http://bootstrapthemes.co
 
   .unlock .input {
     position: absolute;
-    top: 50%;
+    top: 44%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
@@ -109,7 +109,7 @@ Author URI: http://bootstrapthemes.co
 
   .question .input {
     position: absolute;
-    top: 50%;
+    top: 44%;
     left: 25%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
@@ -120,7 +120,7 @@ Author URI: http://bootstrapthemes.co
     outline: none;
     border-bottom: 3px solid #eee;
     color: #eee;
-    font-size: 1.3em;
+    font-size: 20px;
     display: none;
     text-align: center;
   }
@@ -176,7 +176,7 @@ Author URI: http://bootstrapthemes.co
   position: fixed; /* Sit on top of the screen */
   z-index: 1001; /* Add a z-index if needed */
   left: 50%; /* Center the snackbar */
-  top: 50px; /* 30px from the bottom */
+  top: 44px; /* 30px from the bottom */
 }
 
 /* Show the snackbar when clicking on a button (class added with JavaScript) */
@@ -200,20 +200,20 @@ Author URI: http://bootstrapthemes.co
 /* Animations to fade the snackbar in and out */
 @-webkit-keyframes fadein {
   from {top: 0; opacity: 0;}
-  to {top: 50px; opacity: 1;}
+  to {top: 44px; opacity: 1;}
 }
 
 @keyframes fadein {
   from {top: 0; opacity: 0;}
-  to {top: 50px; opacity: 1;}
+  to {top: 44px; opacity: 1;}
 }
 
 @-webkit-keyframes fadeout {
-  from {top: 50px; opacity: 1;}
+  from {top: 44px; opacity: 1;}
   to {top: 0; opacity: 0;}
 }
 
 @keyframes fadeout {
-  from {top: 50px; opacity: 1;}
+  from {top: 44px; opacity: 1;}
   to {top: 0; opacity: 0;}
 }
