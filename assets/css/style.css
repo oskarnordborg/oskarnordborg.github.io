@@ -103,7 +103,7 @@ Author URI: http://bootstrapthemes.co
     outline: none;
     border-bottom: 3px solid #eee;
     color: #eee;
-    font-size: 1.3em;
+    font-size: 20px;
     display: none;
   }
 
@@ -164,6 +164,7 @@ Author URI: http://bootstrapthemes.co
 
 /* The snackbar - position it at the bottom and in the middle of the screen */
 #snackbar {
+  font-size: 20px;
   visibility: hidden; /* Hidden by default. Visible on click */
   min-width: 250px; /* Set a default minimum width */
   margin-left: -125px; /* Divide value of min-width by 2 */
