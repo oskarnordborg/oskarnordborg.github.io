@@ -11,26 +11,12 @@ ko.applyBindings(vm);
 
 const login = async function(password) {
 
-    return await axios.get(`/login?&password=${password}`)
-        .then(response => {
-            return true;
-        })
-        .catch(function (error) {
-            return false;
-        });
+    return (password === "magisk")
 };
 
 const checkphrase = async function(phrase) {
 
-    return await axios.get(`/checkphrase?&phrase=${phrase}`)
-        .then(response => {
-            return true;
-        })
-        .catch(function (error) {
-            if (error.response) {
-                return false;
-            }
-        });
+    return (password === "iskub")
 };
 
 function setCookie(cname, cvalue, exdays) {
