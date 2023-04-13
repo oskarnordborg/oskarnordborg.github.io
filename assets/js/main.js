@@ -134,7 +134,7 @@ jQuery(document).ready(function ($) {
                 correct = await checkphrase(currentAnswer.toLowerCase());
             }
             if (correct) {
-                showMessage('GRATTIS! ' + currentAnswer.toLowerCase() + ' är rätt, låt det vägleda er mot nästa steg :) ', 'green', 10000);
+                showMessage('GRATTIS! ' + currentAnswer.toLowerCase() + ' är rätt! Ni har loggat in hos kunden :) ', 'green', 10000);
                 fireworks.start();
             } else if (couldBeCorrect && !correct && currentAnswer.length == 5) {
                 showMessage('Testa en annan ordning :)', 'grey', 5000);
