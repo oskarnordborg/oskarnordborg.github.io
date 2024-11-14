@@ -6,7 +6,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Countdown />
-        <h1>Årsrapporten 2025</h1>
+        <h1>Helårsrapporten 2025</h1>
       </header>
     </div>
   );
