@@ -5,11 +5,14 @@ import BoardMembers from "./components/BoardMembers";
 import Information from "./components/Information";
 import SignUp from "./components/SignUp";
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [passwordInput, setPasswordInput] = useState("");
   const [snackbarMessage, setSnackbarMessage] = useState(""); // Snackbar message state
+  const [siteData, setSiteData] = useState([]);
+  const sheetUrl = process.env.REACT_APP_INFO_SHEET_URL;
 
   const PASSWORD = process.env.REACT_APP_REPORT_PASSWORD;
   const COOKIE_NAME = "authenticated";
@@ -24,6 +27,29 @@ function App() {
     }
   }, []);
 
+  useEffect(() => {
+    if (isAuthenticated) {
+      const fetchData = async () => {
+        try {
+          const response = await axios.get(sheetUrl);
+          const dataDict = response.data.split("\r\n").reduce((acc, row) => {
+            const [level, key, value] = row.split(",");
+            if (!acc[level]) {
+              acc[level] = {};
+            }
+            acc[level][key] = value;
+            return acc;
+          }, {});
+          setSiteData(dataDict);
+        } catch (error) {
+          console.error("Error fetching Google Sheets data:", error);
+        }
+      };
+
+      fetchData();
+    }
+  }, [isAuthenticated]); // Fetch data only when authenticated
+
   const handleLogin = () => {
     if (passwordInput === PASSWORD) {
       document.cookie = `${COOKIE_NAME}=true; path=/; max-age=86400`;
@@ -31,11 +57,6 @@ function App() {
     } else {
       showSnackbar("Nehe du, det var fel!");
     }
-  };
-
-  const handleLogout = () => {
-    document.cookie = `${COOKIE_NAME}=false; path=/; max-age=0`;
-    setIsAuthenticated(false);
   };
 
   const showSnackbar = (message) => {
@@ -77,18 +98,15 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <button onClick={handleLogout} className="logout-button">
-        Logout
-      </button>
       <main>
         <section id="startpage">
           <Startpage />
         </section>
         <section id="information">
-          <Information />
+          <Information pageData={siteData.info} />
         </section>
         <section id="boardmembers">
-          <BoardMembers />
+          <BoardMembers pageData={siteData.board} />
         </section>
         <section id="signup">
           <SignUp />
