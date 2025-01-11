@@ -11,7 +11,8 @@ function App() {
   const [passwordInput, setPasswordInput] = useState("");
   const [snackbarMessage, setSnackbarMessage] = useState(""); // Snackbar message state
 
-  const PASSWORD = process.env.REACT_APP_SITE_PASSWORD || "your-password";
+  const PASSWORD = process.env.REACT_APP_SITE_PASSWORD;
+  console.log(PASSWORD);
   const COOKIE_NAME = "authenticated";
 
   useEffect(() => {
