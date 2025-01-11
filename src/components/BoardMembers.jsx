@@ -54,9 +54,8 @@ const BoardMembers = ({ pageData }) => {
       <div className="carousel">
         <div className="slides">
           <div className="slide" key={currentBoardKey}>
-            <h2>
-              {pageData[`year_${boardNumber}`]} {pageData[currentBoardKey]}
-            </h2>
+            <h2>{pageData[`year_${boardNumber}`]}</h2>
+            <h2>{pageData[currentBoardKey]}</h2>
             <p>{pageData[`description_${boardNumber}`]}</p>
             <div className="members-container">{members}</div>
           </div>
@@ -65,7 +64,7 @@ const BoardMembers = ({ pageData }) => {
 
       <div className="pagination">
         <button className="pagination-button" onClick={prevSlide}>
-          {"⮜"}
+          {"<"}
         </button>
         {Array.from({ length: slideCount }).map((_, index) => (
           <button
@@ -79,7 +78,7 @@ const BoardMembers = ({ pageData }) => {
           </button>
         ))}
         <button className="pagination-button" onClick={nextSlide}>
-          {"⮞"}
+          {">"}
         </button>
       </div>
     </div>
