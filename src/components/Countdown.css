@@ -1,0 +1,91 @@
+.countdown-timer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Arial", sans-serif;
+  font-size: 2rem;
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  flex-wrap: wrap;
+}
+
+.countdown-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 20px;
+}
+
+.countdown-value {
+  font-size: 5rem;
+  font-weight: bold;
+  color: #ffcc00;
+  animation: bounce 0.5s ease-out;
+}
+
+.countdown-label {
+  font-size: 1.2rem;
+  color: #ddd;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(-10px);
+  }
+  40% {
+    transform: translateY(0);
+  }
+  60% {
+    transform: translateY(-6px);
+  }
+  80% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .countdown-timer {
+    font-size: 1.5rem;
+    padding: 15px;
+  }
+
+  .countdown-item {
+    margin: 10px;
+  }
+
+  .countdown-value {
+    font-size: 3rem;
+  }
+
+  .countdown-label {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .countdown-timer {
+    font-size: 1.2rem;
+    padding: 10px;
+  }
+
+  .countdown-item {
+    margin: 5px;
+  }
+
+  .countdown-value {
+    font-size: 2.5rem;
+  }
+
+  .countdown-label {
+    font-size: 0.9rem;
+  }
+}
