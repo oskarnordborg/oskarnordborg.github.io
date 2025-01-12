@@ -56,7 +56,20 @@ const BoardMembers = ({ pageData }) => {
           <div className="slide" key={currentBoardKey}>
             <h2>{pageData[`year_${boardNumber}`]}</h2>
             <h2>{pageData[currentBoardKey]}</h2>
-            <p>{pageData[`description_${boardNumber}`]}</p>
+            {/* <p>{pageData[`description_${boardNumber}`]}</p> */}
+            <div
+              dangerouslySetInnerHTML={{
+                __html:
+                  pageData[`description_${boardNumber}`] ||
+                  `description_${boardNumber}`,
+              }}
+            ></div>
+            {/* <div>{pageData[`description_${boardNumber}`]}</div>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: `<a href="https://shorturl.at/kib4G">Hockey</a> - Lokalhäng`,
+              }}
+            ></div> */}
             <div className="members-container">{members}</div>
           </div>
         </div>

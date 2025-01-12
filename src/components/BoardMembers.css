@@ -2,6 +2,10 @@ h2 {
   margin: 0;
 }
 
+a {
+  color: inherit;
+}
+
 .section {
   text-align: center;
   padding: 20px;

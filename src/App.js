@@ -109,7 +109,7 @@ function App() {
           <BoardMembers pageData={siteData.board} />
         </section>
         <section id="signup">
-          <SignUp />
+          <SignUp pageData={siteData.signup} />
         </section>
       </main>
     </div>
