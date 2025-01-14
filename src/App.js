@@ -6,6 +6,7 @@ import Information from "./components/Information";
 import SignUp from "./components/SignUp";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import Papa from "papaparse";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -32,8 +33,9 @@ function App() {
       const fetchData = async () => {
         try {
           const response = await axios.get(sheetUrl);
-          const dataDict = response.data.split("\r\n").reduce((acc, row) => {
-            const [level, key, value] = row.split(",");
+          const parsedData = Papa.parse(response.data, { header: false }).data;
+          const dataDict = parsedData.reduce((acc, row) => {
+            let [level, key, value] = row;
             if (!acc[level]) {
               acc[level] = {};
             }
@@ -48,7 +50,7 @@ function App() {
 
       fetchData();
     }
-  }, [isAuthenticated]);
+  }, [isAuthenticated, sheetUrl]);
 
   const handleLogin = () => {
     if (passwordInput === PASSWORD) {
