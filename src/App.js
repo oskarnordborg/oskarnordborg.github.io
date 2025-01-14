@@ -14,7 +14,7 @@ function App() {
   const [siteData, setSiteData] = useState([]);
   const sheetUrl = process.env.REACT_APP_INFO_SHEET_URL;
 
-  const PASSWORD = process.env.REACT_APP_REPORT_PASSWORD;
+  const PASSWORD = process.env.REACT_APP_SECRET_PASSWORD;
   const COOKIE_NAME = "YearlyReportAuth";
 
   useEffect(() => {
