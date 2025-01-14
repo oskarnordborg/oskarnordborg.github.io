@@ -10,12 +10,12 @@ import axios from "axios";
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [passwordInput, setPasswordInput] = useState("");
-  const [snackbarMessage, setSnackbarMessage] = useState(""); // Snackbar message state
+  const [snackbarMessage, setSnackbarMessage] = useState("");
   const [siteData, setSiteData] = useState([]);
   const sheetUrl = process.env.REACT_APP_INFO_SHEET_URL;
 
   const PASSWORD = process.env.REACT_APP_REPORT_PASSWORD;
-  const COOKIE_NAME = "authenticated";
+  const COOKIE_NAME = "YearlyReportAuth";
 
   useEffect(() => {
     const cookies = document.cookie.split(";");
@@ -48,11 +48,11 @@ function App() {
 
       fetchData();
     }
-  }, [isAuthenticated]); // Fetch data only when authenticated
+  }, [isAuthenticated]);
 
   const handleLogin = () => {
     if (passwordInput === PASSWORD) {
-      document.cookie = `${COOKIE_NAME}=true; path=/; max-age=86400`;
+      document.cookie = `${COOKIE_NAME}=true; path=/; max-age=864000`;
       setIsAuthenticated(true);
     } else {
       showSnackbar("Nehe du, det var fel!");
